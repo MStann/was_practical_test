@@ -2,8 +2,25 @@
 
 <html>
     <style>
-        .title {
+        .header {
             text-align: center;
+            margin: auto;
+            padding: 20px;
+            border-radius: 25px;
+            border-color: black;
+            color: white;
+            background-color: #00BFFF;
+            width: 200px;
+            height: 50px;
+            font-family: Arial, sans-serif;
+        }
+        .title {color : white;
+                padding: 15px;
+                border-radius: 25px;
+                background-color: #00BFFF;
+                width: 200px;
+                height: 70px;
+                font-family: Arial, sans-serif;"
         }
     </style>
 
@@ -11,19 +28,21 @@
         <title>School News</title>
     </head>
 
-    <body style ="background-color:yellow">
-        <div class="title">
+    <body style ="background-color:#FAEBD7">
+        <div class="header">
         <h1>
             School News
         </h1>
         </div>
         <div>
     {% if pages %}
-        <ul>
+        <ul >
         {% for page in pages %}
-            <h1>{{ page.title }}</h1>
-            <i>by {{ page.author }} {{ page.date }}</i><br></br>
-            {{ page.content }}<br />
+        <hr>
+            <h1 class="title">{{ page.title }}</h1>
+            <i style =  "margin: auto;
+                        font-family: Arial, sans-serif;">by {{ page.author }} {{ page.date }}</i><br></br>
+            <div style = font-family: Arial, sans-serif;">{{ page.content }}</div><br />
         {% endfor %}
         </ul>
     {% else %}
