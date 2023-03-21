@@ -19,35 +19,38 @@
                 border-radius: 25px;
                 background-color: #00BFFF;
                 width: 200px;
-                height: 70px;
+                height: 55px;
                 font-family: Arial, sans-serif;"
         }
+        .content {font-family: Arial, sans-serif;}
     </style>
 
     <head>
         <title>School News</title>
     </head>
 
-    <body style ="background-color:#FAEBD7">
+    <body style ="background-color:#87CEEB">
         <div class="header">
+
         <h1>
             School News
         </h1>
         </div>
+
         <div>
     {% if pages %}
         <ul >
         {% for page in pages %}
         <hr>
-            <h1 class="title">{{ page.title }}</h1>
-            <i style =  "margin: auto;
-                        font-family: Arial, sans-serif;">by {{ page.author }} {{ page.date }}</i><br></br>
-            <div style = font-family: Arial, sans-serif;">{{ page.content }}</div><br />
+            <h2 class="title">{{ page.title }}</h2>
+            <i class = "content">by {{ page.author }} - {{ page.date }}</i><br></br>
+            <div class = "content">{{ page.content }}</div><br />
         {% endfor %}
         </ul>
     {% else %}
         <strong>There are no pages present</strong>
     {% endif %}
     </div>
+
     </body>
 </html>
