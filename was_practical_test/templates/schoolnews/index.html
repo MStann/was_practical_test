@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+    <style>
+        .title {
+            text-align: center;
+        }
+    </style>
+
+    <head>
+        <title>School News</title>
+    </head>
+
+    <body style ="background-color:yellow">
+        <div class="title">
+        <h1>
+            School News
+        </h1>
+        </div>
+        <div>
+    {% if pages %}
+        <ul>
+        {% for page in pages %}
+            <h1>{{ page.title }}</h1>
+            <i>by {{ page.author }} {{ page.date }}</i><br></br>
+            {{ page.content }}<br />
+        {% endfor %}
+        </ul>
+    {% else %}
+        <strong>There are no pages present</strong>
+    {% endif %}
+    </div>
+    </body>
+</html>
